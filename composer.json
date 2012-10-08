@@ -1,0 +1,33 @@
+{
+    "name":        "ruudk/mollie-bundle",
+    "type":        "symfony-bundle",
+    "description": "A Symfony2 bundle for working with Mollie",
+    "keywords":    ["mollie", "symfony2"],
+    "homepage":    "http://github.com/ruudk/MollieBundle",
+    "license":     "MIT",
+
+    "authors": [
+        {
+            "name": "Ruud Kamphuis",
+            "email": "ruudk@mphuis.com"
+        },
+        {
+            "name": "Contributors",
+            "homepage": "https://github.com/ruudk/MollieBundle/contributors"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": ">=2.0,<2.2-dev",
+        "amnl/mollie": "*"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Ruudk\\MollieBundle": ""
+        }
+    },
+
+    "target-dir": "Ruudk/MollieBundle"
+}

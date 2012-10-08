@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="ruudk_mollie.partner_id"/>
+        <parameter key="ruudk_mollie.profile_key"/>
+        <parameter key="ruudk_mollie.testmode"/>
+        <parameter key="ruudk_mollie.ideal_gateway.class">AMNL\Mollie\IDeal\IDealGateway</parameter>
+    </parameters>
+
+    <services>
+        <service id="ruudk_mollie.ideal_gateway" class="%ruudk_mollie.ideal_gateway.class%">
+            <argument>%ruudk_mollie.partner_id%</argument>
+            <argument>%ruudk_mollie.profile_key%</argument>
+            <argument>%ruudk_mollie.testmode%</argument>
+        </service>
+
+        <service id="mollie.ideal" alias="ruudk_mollie.ideal_gateway"/>
+    </services>
+</container>
