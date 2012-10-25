@@ -9,6 +9,8 @@
         <parameter key="ruudk_mollie.profile_key"/>
         <parameter key="ruudk_mollie.testmode"/>
         <parameter key="ruudk_mollie.ideal_gateway.class">AMNL\Mollie\IDeal\IDealGateway</parameter>
+        <parameter key="ruudk_mollie.ivr_gateway.class">AMNL\Mollie\IVR\MicropaymentGateway</parameter>
+        <parameter key="ruudk_mollie.minitix_gateway.class">AMNL\Mollie\MiniTix\MiniTixGateway</parameter>
     </parameters>
 
     <services>
@@ -17,7 +19,18 @@
             <argument>%ruudk_mollie.profile_key%</argument>
             <argument>%ruudk_mollie.testmode%</argument>
         </service>
+        
+        <service id="ruudk_mollie.ivr_gateway" class="%ruudk_mollie.ivr_gateway.class%">
+            <argument>%ruudk_mollie.partner_id%</argument>
+        </service>
+        
+        <service id="ruudk_mollie.minitix_gateway" class="%ruudk_mollie.minitix_gateway.class%">
+            <argument>%ruudk_mollie.partner_id%</argument>
+            <argument>%ruudk_mollie.profile_key%</argument>
+        </service>
 
         <service id="mollie.ideal" alias="ruudk_mollie.ideal_gateway"/>
+        <service id="mollie.ivr" alias="ruudk_mollie.ivr_gateway"/>
+        <service id="mollie.minitix" alias="ruudk_mollie.minitix_gateway"/>
     </services>
 </container>
