@@ -47,7 +47,9 @@ Congratulations! You're ready.
 ## Use the API
 
 ````php
-$mollie = $this->container->get('mollie.ideal');
+$ideal = $this->container->get('mollie.ideal');
+$minitix = $this->container->get('mollie.minitix');
+$ivr = $this->container->get('mollie.ivr');
 ````
 
 For full usage of the Mollie API see the [documentation](https://github.com/itavero/AMNL-Mollie).
