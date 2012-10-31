@@ -40,7 +40,7 @@ ruudk_mollie:
     partner_id:  # Your partner ID
     profile_key: ~  # Optional profile key
     testmode:    true
-	client: # Optional Buzz client, can be file_get_contents or curl
+	buzz_client: # Optional Buzz client, can be file_get_contents or curl
 ```
 
 Congratulations! You're ready.
