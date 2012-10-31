@@ -20,23 +20,23 @@
             <argument>%ruudk_mollie.profile_key%</argument>
             <argument>%ruudk_mollie.testmode%</argument>
             <argument/>
-            <argument>%ruudk_mollie.buzz_client%</argument>
+            <argument type="service" id="ruudk_mollie.buzz_client" />
         </service>
         
         <service id="ruudk_mollie.ivr_gateway" class="%ruudk_mollie.ivr_gateway.class%">
             <argument>%ruudk_mollie.partner_id%</argument>
             <argument/>
-            <argument>%ruudk_mollie.buzz_client%</argument>
+            <argument type="service" id="ruudk_mollie.buzz_client" />
         </service>
         
         <service id="ruudk_mollie.minitix_gateway" class="%ruudk_mollie.minitix_gateway.class%">
             <argument>%ruudk_mollie.partner_id%</argument>
             <argument>%ruudk_mollie.profile_key%</argument>
             <argument/>
-            <argument>%ruudk_mollie.buzz_client%</argument>
+            <argument type="service" id="ruudk_mollie.buzz_client" />
         </service>
 
-        <service id="ruudk_mollie.buzz_client" class="%ruudk_mollie.buzz_client.class%" />
+        <service id="ruudk_mollie.buzz_client" synthetic="true" class="%ruudk_mollie.buzz_client.class%" />
 
         <service id="mollie.ideal" alias="ruudk_mollie.ideal_gateway"/>
         <service id="mollie.ivr" alias="ruudk_mollie.ivr_gateway"/>
