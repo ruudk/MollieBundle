@@ -33,6 +33,13 @@ class Configuration implements ConfigurationInterface
                 ->booleanNode('testmode')
                     ->defaultTrue()
                 ->end()
+                ->scalarNode('client')
+                    ->defaultValue('file_get_contents')
+                    ->validate()
+                        ->ifNotInArray(array('file_get_contents', 'curl'))
+                        ->thenInvalid('Client %s is not supported')
+                    ->end()
+                ->end()
             ->end()
         ;
 

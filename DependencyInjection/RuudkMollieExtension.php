@@ -37,5 +37,9 @@ class RuudkMollieExtension extends Extension
         if (isset($config['testmode'])) {
             $container->setParameter('ruudk_mollie.testmode', $config['testmode']);
         }
+
+        if (isset($config['client'])) {
+            $container->setParameter('ruudk_mollie.client.class', $config['client'] == 'curl' ? 'Buzz\Client\Curl' : 'Buzz\Client\FileGetContents');
+        }
     }
 }
