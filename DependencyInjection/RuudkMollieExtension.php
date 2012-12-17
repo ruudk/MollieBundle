@@ -15,6 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
+use Symfony\Component\DependencyInjection\Definition;
 
 class RuudkMollieExtension extends Extension
 {
@@ -39,7 +40,11 @@ class RuudkMollieExtension extends Extension
         }
 
         if (isset($config['buzz_client'])) {
-            $container->setParameter('ruudk_mollie.buzz_client.class', $config['buzz_client'] == 'curl' ? 'Buzz\Client\Curl' : 'Buzz\Client\FileGetContents');
+            if (in_array($config['buzz_client'], array('curl', 'file_get_contents'))) {
+                $container->setDefinition('ruudk_mollie.buzz_client', new Definition($config['buzz_client'] == 'curl' ? 'Buzz\Client\Curl' : 'Buzz\Client\FileGetContents'));
+            } else {
+                $container->setAlias('ruudk_mollie.buzz_client', $config['buzz_client']);
+            }
         }
     }
 }

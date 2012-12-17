@@ -8,7 +8,6 @@
         <parameter key="ruudk_mollie.partner_id"/>
         <parameter key="ruudk_mollie.profile_key"/>
         <parameter key="ruudk_mollie.testmode"/>
-        <parameter key="ruudk_mollie.buzz_client.class">Buzz\Client\FileGetContents</parameter>
         <parameter key="ruudk_mollie.ideal_gateway.class">AMNL\Mollie\IDeal\IDealGateway</parameter>
         <parameter key="ruudk_mollie.ivr_gateway.class">AMNL\Mollie\IVR\MicropaymentGateway</parameter>
         <parameter key="ruudk_mollie.minitix_gateway.class">AMNL\Mollie\MiniTix\MiniTixGateway</parameter>
@@ -35,8 +34,6 @@
             <argument>https://secure.mollie.nl/xml/</argument>
             <argument type="service" id="ruudk_mollie.buzz_client" />
         </service>
-
-        <service id="ruudk_mollie.buzz_client" class="%ruudk_mollie.buzz_client.class%" />
 
         <service id="mollie.ideal" alias="ruudk_mollie.ideal_gateway"/>
         <service id="mollie.ivr" alias="ruudk_mollie.ivr_gateway"/>

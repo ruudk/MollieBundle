@@ -35,10 +35,6 @@ class Configuration implements ConfigurationInterface
                 ->end()
                 ->scalarNode('buzz_client')
                     ->defaultValue('file_get_contents')
-                    ->validate()
-                        ->ifNotInArray(array('file_get_contents', 'curl'))
-                        ->thenInvalid('Buzz client %s is not supported')
-                    ->end()
                 ->end()
             ->end()
         ;
