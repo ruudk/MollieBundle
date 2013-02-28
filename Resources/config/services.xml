@@ -11,6 +11,7 @@
         <parameter key="ruudk_mollie.ideal_gateway.class">AMNL\Mollie\IDeal\IDealGateway</parameter>
         <parameter key="ruudk_mollie.ivr_gateway.class">AMNL\Mollie\IVR\MicropaymentGateway</parameter>
         <parameter key="ruudk_mollie.minitix_gateway.class">AMNL\Mollie\MiniTix\MiniTixGateway</parameter>
+        <parameter key="ruudk_mollie.paysafecard_gateway.class">AMNL\Mollie\Paysafecard\PaysafecardGateway</parameter>
     </parameters>
 
     <services>
@@ -34,9 +35,17 @@
             <argument>https://secure.mollie.nl/xml/</argument>
             <argument type="service" id="ruudk_mollie.buzz_client" />
         </service>
+        
+        <service id="ruudk_mollie.paysafecard_gateway" class="%ruudk_mollie.paysafecard_gateway.class%">
+            <argument>%ruudk_mollie.partner_id%</argument>
+            <argument>%ruudk_mollie.profile_key%</argument>
+            <argument />
+            <argument type="service" id="ruudk_mollie.buzz_client" />
+        </service>
 
         <service id="mollie.ideal" alias="ruudk_mollie.ideal_gateway"/>
         <service id="mollie.ivr" alias="ruudk_mollie.ivr_gateway"/>
         <service id="mollie.minitix" alias="ruudk_mollie.minitix_gateway"/>
+        <service id="mollie.paysafecard" alias="ruudk_mollie.paysafecard_gateway"/>
     </services>
 </container>
