@@ -19,20 +19,20 @@
             <argument>%ruudk_mollie.partner_id%</argument>
             <argument>%ruudk_mollie.profile_key%</argument>
             <argument>%ruudk_mollie.testmode%</argument>
-            <argument>https://secure.mollie.nl/xml/</argument>
+            <argument />
             <argument type="service" id="ruudk_mollie.buzz_client" />
         </service>
         
         <service id="ruudk_mollie.ivr_gateway" class="%ruudk_mollie.ivr_gateway.class%">
             <argument>%ruudk_mollie.partner_id%</argument>
-            <argument>https://secure.mollie.nl/xml/</argument>
+            <argument />
             <argument type="service" id="ruudk_mollie.buzz_client" />
         </service>
         
         <service id="ruudk_mollie.minitix_gateway" class="%ruudk_mollie.minitix_gateway.class%">
             <argument>%ruudk_mollie.partner_id%</argument>
             <argument>%ruudk_mollie.profile_key%</argument>
-            <argument>https://secure.mollie.nl/xml/</argument>
+            <argument />
             <argument type="service" id="ruudk_mollie.buzz_client" />
         </service>
         
