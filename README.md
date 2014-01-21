@@ -1,9 +1,13 @@
 RuudkMollieBundle
 =================
 
-A Symfony2 bundle for working with Mollie
+A Symfony2 bundle for working with the old iDEAL Mollie API.
 
 This bundle uses [AMNL\Mollie](https://github.com/itavero/AMNL-Mollie) created by Arno Moonen.
+
+## Deprecated!
+
+**If you start a new project today, don't use this bundle, but use [RuudkPaymentMollieBundle](https://github.com/ruudk/PaymentMollieBundle) which is powered by [JMSPaymentCorebundle](https://github.com/schmittjoh/JMSPaymentCoreBundle) and [Omnipay/Mollie](https://github.com/omnipay/mollie) and support the new Mollie API that supports ideal, credit cards, mister cash and more.**
 
 ## Installation
 
